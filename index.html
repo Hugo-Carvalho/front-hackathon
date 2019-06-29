@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Upload Files</title>
+
+</head>
+
+<body>
+    <div id="overlay" class="invisible"></div>
+    <div id="loads" class="lds-css ng-scope invisible">
+        <div class="lds-rolling load">
+            <div></div>
+        </div>
+    </div>
+    <div class="upload">
+        <form method="post" enctype="multipart/form-data">
+            
+            <input type="file" name="files[]" id="arquivo" class="arquivo">
+            <input type="text" name="file" id="file" class="file" placeholder="Arquivo" readonly="readonly">
+            <input type="button" class="btn" value="SELECIONAR">
+
+            <br /><br /><br /><br />
+            <input class="load-btn" onclick="loading()" type="submit" value="Upload" name="submit">
+        </form>
+        <div id="results">
+            <h3 class="label">hfdjkfhksjfk</h3>
+            <p class='content'>jkxhkjzhzxkjhckzjxc</p>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+    <script src="https://d3js.org/d3-fetch.v1.min.js"></script>
+	<script src="script.js"></script>
+</body>
+
+</html>

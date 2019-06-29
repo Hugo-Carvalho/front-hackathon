@@ -142,7 +142,6 @@ body{
   margin-bottom: 0;
   padding: 10px 0 10px 55px;
   position: relative;
-  cursor: pointer;
 }
 
 .label:hover, .label.active{
@@ -168,5 +167,4 @@ body{
   padding: 30px 0 30px 55px;
   border: 2px solid #4493c9;
   border-top:none;
-  display: none;
 }

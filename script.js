@@ -7,15 +7,6 @@ $('.arquivo').on('change', function () {
     $('#file').val(fileName);
 });
 
-$(document).ready(function () {
-    $('.label').on('click', function (e) {
-        e.preventDefault();
-        
-        $(this).toggleClass('active').siblings('.content').slideToggle();
-        $(this).parent().siblings().find('.label').removeClass('active').siblings('.content').slideUp();
-    });
-});
-
 const url = 'process.php';
 const form = document.querySelector('form');
 
@@ -38,10 +29,12 @@ form.addEventListener('submit', e => {
                 }})
                 .object(data);
 
-            expensesByCod.forEach(function (result) {
+            $.each(expensesByCod, function (result) {
                 var results = document.getElementById("results");
-                results.innerHTML += "<h3 class='label'>" + expensesByCod[result].NOME_DISCIP_ORIG + "</h3>"
-                results.innerHTML += "<p class='content'>" + expensesByCod[result].equivalences + "</p>"
+                results.innerHTML += "<h3 class='label'>" + expensesByCod[result].NOME_DISCIP_ORIG + "</h3>";
+                expensesByCod[result].equivalences.forEach(function (data) {
+                    results.innerHTML += "<p class='content'>" + data.NOME_DISCIP_EQUIV + "</p>" 
+                });
             });
         });
         stop_loading();
